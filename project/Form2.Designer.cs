@@ -89,8 +89,9 @@ namespace project
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(105, 50);
             this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
+            this.button5.Text = "API";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -99,7 +100,7 @@ namespace project
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(105, 50);
             this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
+            this.button4.Text = "그래픽 얍";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -109,8 +110,9 @@ namespace project
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(105, 50);
             this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
+            this.button3.Text = "tcp connect -> rabbitmq";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -119,8 +121,9 @@ namespace project
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 50);
             this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
+            this.button2.Text = "test ui";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // cameraBtn
             // 
@@ -139,11 +142,13 @@ namespace project
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pictureBox1.Location = new System.Drawing.Point(111, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(478, 476);
+            this.pictureBox1.Size = new System.Drawing.Size(478, 251);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.WaitOnLoad = true;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form2

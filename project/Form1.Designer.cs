@@ -39,14 +39,14 @@ namespace project
             this.Password = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Base_panel = new System.Windows.Forms.Panel();
-            this.Time_panel = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
-            this.Base_panel.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,7 @@ namespace project
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(215, 26);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // UserName
             // 
@@ -96,6 +97,7 @@ namespace project
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(215, 26);
             this.textBox2.TabIndex = 3;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Password
             // 
@@ -125,32 +127,31 @@ namespace project
             // 
             this.panel3.AllowDrop = true;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.Controls.Add(this.Base_panel);
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 190);
             this.panel3.TabIndex = 6;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // Base_panel
+            // panel4
             // 
-            this.Base_panel.BackColor = System.Drawing.Color.Thistle;
-            this.Base_panel.Controls.Add(this.Time_panel);
-            this.Base_panel.Location = new System.Drawing.Point(0, 178);
-            this.Base_panel.Name = "Base_panel";
-            this.Base_panel.Size = new System.Drawing.Size(303, 12);
-            this.Base_panel.TabIndex = 7;
-            this.Base_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Base_panel_Paint);
+            this.panel4.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Location = new System.Drawing.Point(0, 177);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(300, 13);
+            this.panel4.TabIndex = 9;
             // 
-            // Time_panel
+            // panel5
             // 
-            this.Time_panel.BackColor = System.Drawing.Color.SlateBlue;
-            this.Time_panel.Location = new System.Drawing.Point(0, 0);
-            this.Time_panel.Name = "Time_panel";
-            this.Time_panel.Size = new System.Drawing.Size(12, 12);
-            this.Time_panel.TabIndex = 0;
-            this.Time_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Time_panel_Paint);
+            this.panel5.BackColor = System.Drawing.Color.Orchid;
+            this.panel5.Location = new System.Drawing.Point(2, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(18, 10);
+            this.panel5.TabIndex = 10;
             // 
             // pictureBox1
             // 
@@ -200,7 +201,7 @@ namespace project
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel3.ResumeLayout(false);
-            this.Base_panel.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -219,11 +220,11 @@ namespace project
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel Base_panel;
-        private System.Windows.Forms.Panel Time_panel;
         private System.Windows.Forms.Timer Timer1;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }
 

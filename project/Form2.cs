@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using OpenCvSharp;
 using OpenCvSharp.Extensions;
 using System.Threading;
+using System.Net.Sockets;
+using System.Net;
 namespace project
 {
     public partial class Form2 : Form
@@ -111,6 +113,51 @@ namespace project
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 frm = new Form3();
+            frm.Owner = this;
+            frm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            async void connect()
+            {
+                
+                TcpClient tcp = new TcpClient();
+                await Task.Run(() =>
+                {
+                    try
+                    {
+                        tcp.Connect(IPAddress.Parse("211.248.188.9"),54527);
+                      
+                    }
+                    catch(Exception e) 
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+                    if (tcp.Connected)
+                    {
+                        MessageBox.Show("연결 성공");
+                    }
+                    else
+                    {
+                        MessageBox.Show("실패");
+                    }
+                });
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form5 frm = new Form5();
+            frm.Owner = this;
+            frm.Show();
         }
     }
 }

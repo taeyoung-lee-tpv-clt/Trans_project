@@ -1,35 +1,160 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <PropertyGroup>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130</SSDTPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
-
   <ItemGroup>
+    <PackageReference Include="Chart.js" Version="2.9.3" />
     <PackageReference Include="CSharp.Odbc" Version="1.0.4.1" />
+    <PackageReference Include="CSharp.Winform.UI" Version="1.0.3.3" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="EntityFramework.ko" Version="6.2.0" />
+    <PackageReference Include="FastWebcam-OpenCVSharp3" Version="1.0.1" />
+    <PackageReference Include="GraphQL" Version="4.6.1" />
+    <PackageReference Include="HIC.System.Windows.Forms.DataVisualization" Version="1.0.1" />
+    <PackageReference Include="LiveCharts.WinForms" Version="0.9.7.1" />
+    <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
+    <PackageReference Include="Microsoft.Chart.Controls" Version="0.9.7.1" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="5.0.11" />
-    <PackageReference Include="OpenCV" Version="2.4.11" />
+    <PackageReference Include="Microsoft.Graph" Version="4.8.0" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="2.0.5" />
+    <PackageReference Include="Microsoft.ReportViewer.Web.2012" Version="1.0.0" />
+    <PackageReference Include="MySql.Data" Version="8.0.27" />
+    <PackageReference Include="MySqlConnector" Version="1.3.14" />
     <PackageReference Include="OpenCvSharp3-AnyCPU" Version="4.0.0.20181129" />
+    <PackageReference Include="Openfin.Winform" Version="17.2.0" />
+    <PackageReference Include="OpenGL.Net" Version="0.8.4" />
+    <PackageReference Include="OpenGL.Net.WinForms" Version="0.8.4" />
+    <PackageReference Include="OpenTK" Version="4.6.7" />
+    <PackageReference Include="SciChart" Version="6.4.0.13629" />
+    <PackageReference Include="Sparrow.Chart.Wpf" Version="13.1.0.118" />
     <PackageReference Include="System.Data.Odbc" Version="5.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="WinformMvvm" Version="2.2.0" />
   </ItemGroup>
-
   <ItemGroup>
+    <Compile Update="Model1.Context.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Model1.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Model2.Context.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Model2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Model2.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Model3.Context.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Model3.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Model3.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Model3.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Model4.Context.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Model4.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Model4.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Model4.tt</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
+  <ItemGroup>
+    <None Update="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </None>
+    <None Update="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </None>
+    <None Update="Model2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model2.Context.cs</LastGenOutput>
+    </None>
+    <None Update="Model2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model2.cs</LastGenOutput>
+    </None>
+    <None Update="Model3.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model3.Context.cs</LastGenOutput>
+    </None>
+    <None Update="Model3.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model3.cs</LastGenOutput>
+    </None>
+    <None Update="Model4.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model4.Context.cs</LastGenOutput>
+    </None>
+    <None Update="Model4.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model4.cs</LastGenOutput>
+    </None>
+    <None Update="OpenCvSharpExtern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup Condition="$(VisualStudioVersion) == '16.0'">
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' == ''" />
 </Project>
